@@ -18,14 +18,13 @@ namespace ProjectFonal
         public void conectarComando(string comando)
         {
             //Conectamos con el servidos
-            //SqlConnection conexion = new SqlConnection(Properties.Settings.Default.Conectar);
             conecxionSting = "Data Source=sql5097.site4now.net;Initial Catalog=db_a74d2a_projectfinal;Persist Security Info=True;User ID=db_a74d2a_projectfinal_admin;Password=parcero89";
             SqlConnection conexion = new SqlConnection(conecxionSting);
             try
             {
                 //Abrimos la conexión con la DB
                 conexion.Open();
-                MessageBox.Show("Bien");
+                MessageBox.Show("Se realizo la conexión");
                 //Ejecutamos los comandos
                 SqlCommand cmd = new SqlCommand(comando, conexion);
                 cmd.ExecuteNonQuery();
@@ -35,14 +34,14 @@ namespace ProjectFonal
             catch (Exception ex)
             {
 
-                MessageBox.Show("mal" + ex.Message);
-                throw;
+                MessageBox.Show("No se realizo la conexión" + ex.Message);
+
             }
 
         }
 
-        //Metodo para mostrar los datos en un DatagridView
-        public void MostrarTabla(string comando, DataGridView datagrid)
+        //Metodo para mostrar los datos en algún componente necesario
+        public DataTable MostrarTabla(string comando)
         {
             //Conectamos con el servidos
             conecxionSting = "Data Source=sql5097.site4now.net;Initial Catalog=db_a74d2a_projectfinal;Persist Security Info=True;User ID=db_a74d2a_projectfinal_admin;Password=parcero89";
@@ -55,9 +54,11 @@ namespace ProjectFonal
             DataTable tabla = new DataTable();
             //llenamos tabla con los datos consigandos en la data 
             data.Fill(tabla);
-            //Mostramos en el datagrid
-            datagrid.DataSource = tabla;
 
+            return tabla;
         }
+
+
+        
     }
 }

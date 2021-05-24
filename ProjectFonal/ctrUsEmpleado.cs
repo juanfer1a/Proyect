@@ -34,7 +34,7 @@ namespace ProjectFonal
 
                     //Mantenemos la tabla refrescada.               
                     string mostrarTabla = "SELECT * from tblEmpleado";
-                    cn.MostrarTabla(mostrarTabla, dtgvEmpleado);
+                    cn.MostrarTabla(mostrarTabla);
 
                 }
                 catch (Exception ex)

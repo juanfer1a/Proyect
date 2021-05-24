@@ -30,8 +30,8 @@ namespace ProjectFonal
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
-            this.btnModificarEmpleado = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardarEmpleado = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDireccionEmpleado = new System.Windows.Forms.TextBox();
@@ -44,6 +44,7 @@ namespace ProjectFonal
             this.txtNombreEmpleado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTelefonoEmpleado = new System.Windows.Forms.TextBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,23 +57,23 @@ namespace ProjectFonal
             this.label5.TabIndex = 25;
             this.label5.Text = "EMPLEADOS";
             // 
-            // btnEliminarEmpleado
+            // btnEliminar
             // 
-            this.btnEliminarEmpleado.Location = new System.Drawing.Point(134, 311);
-            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
-            this.btnEliminarEmpleado.Size = new System.Drawing.Size(93, 26);
-            this.btnEliminarEmpleado.TabIndex = 24;
-            this.btnEliminarEmpleado.Text = "Eliminar";
-            this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(134, 311);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(93, 26);
+            this.btnEliminar.TabIndex = 24;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // btnModificarEmpleado
+            // btnModificar
             // 
-            this.btnModificarEmpleado.Location = new System.Drawing.Point(30, 311);
-            this.btnModificarEmpleado.Name = "btnModificarEmpleado";
-            this.btnModificarEmpleado.Size = new System.Drawing.Size(86, 26);
-            this.btnModificarEmpleado.TabIndex = 23;
-            this.btnModificarEmpleado.Text = "Modificar";
-            this.btnModificarEmpleado.UseVisualStyleBackColor = true;
+            this.btnModificar.Location = new System.Drawing.Point(30, 311);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(86, 26);
+            this.btnModificar.TabIndex = 23;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnGuardarEmpleado
             // 
@@ -179,8 +180,8 @@ namespace ProjectFonal
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTelefonoEmpleado);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnEliminarEmpleado);
-            this.Controls.Add(this.btnModificarEmpleado);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardarEmpleado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDireccionEmpleado);
@@ -202,8 +203,8 @@ namespace ProjectFonal
         #endregion
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnEliminarEmpleado;
-        private System.Windows.Forms.Button btnModificarEmpleado;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnGuardarEmpleado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDireccionEmpleado;
