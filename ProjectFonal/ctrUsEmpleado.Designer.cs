@@ -35,17 +35,17 @@ namespace ProjectFonal
             this.btnModificarEmpleado = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCancelarModificarEmpleado = new System.Windows.Forms.Button();
-            this.txtModificarNitProveedor = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtModificarApellidoEmpleado = new System.Windows.Forms.TextBox();
+            this.txtModificarIdentificacionEmpleado = new System.Windows.Forms.TextBox();
             this.cboModificarEmpleado = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtModificarNombreEmpleado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtModificarTelefonoProveedor = new System.Windows.Forms.TextBox();
+            this.txtModificarDireccionEmpleado = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtModificarCtaBancariaProveedor = new System.Windows.Forms.TextBox();
+            this.txtModificarTelefonoEmpleado = new System.Windows.Forms.TextBox();
             this.pnlEliminarEmpleado = new System.Windows.Forms.Panel();
             this.btnCancelarEliminarEmpleado = new System.Windows.Forms.Button();
             this.cboEliminarEmpleado = new System.Windows.Forms.ComboBox();
@@ -90,24 +90,24 @@ namespace ProjectFonal
             this.btnGuardarEmpleado.TabIndex = 40;
             this.btnGuardarEmpleado.Text = "Guardar Empleado";
             this.btnGuardarEmpleado.UseVisualStyleBackColor = true;
-            this.btnGuardarEmpleado.Click += new System.EventHandler(this.btnGuardarProveedor_Click);
+            this.btnGuardarEmpleado.Click += new System.EventHandler(this.btnGuardarEmpleado_Click);
             // 
             // pnlModificarEmpleado
             // 
             this.pnlModificarEmpleado.Controls.Add(this.btnModificarEmpleado);
             this.pnlModificarEmpleado.Controls.Add(this.label10);
             this.pnlModificarEmpleado.Controls.Add(this.btnCancelarModificarEmpleado);
-            this.pnlModificarEmpleado.Controls.Add(this.txtModificarNitProveedor);
-            this.pnlModificarEmpleado.Controls.Add(this.textBox1);
+            this.pnlModificarEmpleado.Controls.Add(this.txtModificarApellidoEmpleado);
+            this.pnlModificarEmpleado.Controls.Add(this.txtModificarIdentificacionEmpleado);
             this.pnlModificarEmpleado.Controls.Add(this.cboModificarEmpleado);
             this.pnlModificarEmpleado.Controls.Add(this.label13);
             this.pnlModificarEmpleado.Controls.Add(this.txtModificarNombreEmpleado);
             this.pnlModificarEmpleado.Controls.Add(this.label6);
             this.pnlModificarEmpleado.Controls.Add(this.label7);
-            this.pnlModificarEmpleado.Controls.Add(this.txtModificarTelefonoProveedor);
+            this.pnlModificarEmpleado.Controls.Add(this.txtModificarDireccionEmpleado);
             this.pnlModificarEmpleado.Controls.Add(this.label9);
             this.pnlModificarEmpleado.Controls.Add(this.label8);
-            this.pnlModificarEmpleado.Controls.Add(this.txtModificarCtaBancariaProveedor);
+            this.pnlModificarEmpleado.Controls.Add(this.txtModificarTelefonoEmpleado);
             this.pnlModificarEmpleado.Location = new System.Drawing.Point(265, 211);
             this.pnlModificarEmpleado.Name = "pnlModificarEmpleado";
             this.pnlModificarEmpleado.Size = new System.Drawing.Size(396, 173);
@@ -141,19 +141,19 @@ namespace ProjectFonal
             this.btnCancelarModificarEmpleado.Text = "Cancelar";
             this.btnCancelarModificarEmpleado.UseVisualStyleBackColor = true;
             // 
-            // txtModificarNitProveedor
+            // txtModificarApellidoEmpleado
             // 
-            this.txtModificarNitProveedor.Location = new System.Drawing.Point(247, 91);
-            this.txtModificarNitProveedor.Name = "txtModificarNitProveedor";
-            this.txtModificarNitProveedor.Size = new System.Drawing.Size(139, 20);
-            this.txtModificarNitProveedor.TabIndex = 3;
+            this.txtModificarApellidoEmpleado.Location = new System.Drawing.Point(247, 91);
+            this.txtModificarApellidoEmpleado.Name = "txtModificarApellidoEmpleado";
+            this.txtModificarApellidoEmpleado.Size = new System.Drawing.Size(139, 20);
+            this.txtModificarApellidoEmpleado.TabIndex = 3;
             // 
-            // textBox1
+            // txtModificarIdentificacionEmpleado
             // 
-            this.textBox1.Location = new System.Drawing.Point(247, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtModificarIdentificacionEmpleado.Location = new System.Drawing.Point(247, 41);
+            this.txtModificarIdentificacionEmpleado.Name = "txtModificarIdentificacionEmpleado";
+            this.txtModificarIdentificacionEmpleado.Size = new System.Drawing.Size(139, 20);
+            this.txtModificarIdentificacionEmpleado.TabIndex = 0;
             // 
             // cboModificarEmpleado
             // 
@@ -197,12 +197,12 @@ namespace ProjectFonal
             this.label7.TabIndex = 4;
             this.label7.Text = "Apellido:";
             // 
-            // txtModificarTelefonoProveedor
+            // txtModificarDireccionEmpleado
             // 
-            this.txtModificarTelefonoProveedor.Location = new System.Drawing.Point(247, 117);
-            this.txtModificarTelefonoProveedor.Name = "txtModificarTelefonoProveedor";
-            this.txtModificarTelefonoProveedor.Size = new System.Drawing.Size(139, 20);
-            this.txtModificarTelefonoProveedor.TabIndex = 5;
+            this.txtModificarDireccionEmpleado.Location = new System.Drawing.Point(247, 117);
+            this.txtModificarDireccionEmpleado.Name = "txtModificarDireccionEmpleado";
+            this.txtModificarDireccionEmpleado.Size = new System.Drawing.Size(139, 20);
+            this.txtModificarDireccionEmpleado.TabIndex = 5;
             // 
             // label9
             // 
@@ -222,12 +222,12 @@ namespace ProjectFonal
             this.label8.TabIndex = 6;
             this.label8.Text = "Teléfono:";
             // 
-            // txtModificarCtaBancariaProveedor
+            // txtModificarTelefonoEmpleado
             // 
-            this.txtModificarCtaBancariaProveedor.Location = new System.Drawing.Point(247, 143);
-            this.txtModificarCtaBancariaProveedor.Name = "txtModificarCtaBancariaProveedor";
-            this.txtModificarCtaBancariaProveedor.Size = new System.Drawing.Size(139, 20);
-            this.txtModificarCtaBancariaProveedor.TabIndex = 7;
+            this.txtModificarTelefonoEmpleado.Location = new System.Drawing.Point(247, 143);
+            this.txtModificarTelefonoEmpleado.Name = "txtModificarTelefonoEmpleado";
+            this.txtModificarTelefonoEmpleado.Size = new System.Drawing.Size(139, 20);
+            this.txtModificarTelefonoEmpleado.TabIndex = 7;
             // 
             // pnlEliminarEmpleado
             // 
@@ -457,14 +457,14 @@ namespace ProjectFonal
         private System.Windows.Forms.ComboBox cboModificarEmpleado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCancelarModificarEmpleado;
-        private System.Windows.Forms.TextBox txtModificarNitProveedor;
+        private System.Windows.Forms.TextBox txtModificarApellidoEmpleado;
         private System.Windows.Forms.TextBox txtModificarNombreEmpleado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtModificarTelefonoProveedor;
+        private System.Windows.Forms.TextBox txtModificarDireccionEmpleado;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtModificarCtaBancariaProveedor;
+        private System.Windows.Forms.TextBox txtModificarTelefonoEmpleado;
         private System.Windows.Forms.Panel pnlEliminarEmpleado;
         private System.Windows.Forms.Button btnCancelarEliminarEmpleado;
         private System.Windows.Forms.ComboBox cboEliminarEmpleado;
@@ -486,7 +486,7 @@ namespace ProjectFonal
         private System.Windows.Forms.TextBox txtIdentificacionEmpleado;
         private System.Windows.Forms.TextBox txtTelefonoEmpleado;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtModificarIdentificacionEmpleado;
         private System.Windows.Forms.Label label13;
     }
 }
