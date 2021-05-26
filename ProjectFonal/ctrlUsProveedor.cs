@@ -22,62 +22,28 @@ namespace ProjectFonal
             //Inicializamos el boton
             btnBuscarProveedor.Enabled = false;
 
-            //Mantenemos el datagrid refrescado
-            try
-            {
-                //Mantenemos la tabla refrescada               
-                string mostrarTabla = "SELECT * from tblProveedor";
-                //Llenamos el datagrid con la información
-                dtgvProveedor.DataSource = (cn.MostrarTabla(mostrarTabla));
-            }
-            catch (Exception ex)
-            {
+            //Metodos para tener los datos actualizados
+            refrescarcombobox();
+            //Metodo para tener los datos actualizados
+            refrescardatagrid();
 
-                MessageBox.Show("No se pudo mostrar la información en el " + dtgvProveedor + "" + ex.Message);
-            }
-
-            //Llenamos los comboboxes
-            try
-            {
-                string BuscarProveedor = "SELECT idNit,strNombtr FROM tblProveedor ";
-                cboBuscarProveedor.DataSource = (cn.MostrarTabla(BuscarProveedor));
-                //Para mostrar en el Combo los nombres
-                cboBuscarProveedor.DisplayMember = "strNombtr";
-                //Para utilizar el nit al momento de hacer la consulta
-                cboBuscarProveedor.ValueMember = "idNit";
-
-                string EliminarProveedor = "SELECT idNit,strNombtr FROM tblProveedor ";
-                cboEliminarProveedor.DataSource = (cn.MostrarTabla(EliminarProveedor));
-                //Para mostrar en el Combo los nombres
-                cboEliminarProveedor.DisplayMember = "strNombtr";
-                //Para utilizar el nit al momento de hacer la consulta
-                cboEliminarProveedor.ValueMember = "idNit";
-
-                string ModificarProveedor = "SELECT idNit,strNombtr FROM tblProveedor ";
-                cboModificarProveedor.DataSource = (cn.MostrarTabla(ModificarProveedor));
-                //Para mostrar en el Combo los nombres
-                cboModificarProveedor.DisplayMember = "strNombtr";
-                //Para utilizar el nit al momento de hacer la consulta
-                cboModificarProveedor.ValueMember = "idNit";
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo elimar al proveedor" + ex.Message);
-
-            }
+          
         }
 
         //BLOQUE BUSCAR PROVEEDOR
-
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
             string Abuscar=cboBuscarProveedor.Text; 
+
             try
             {
                 //Seleccionamos un proveedor en especifico  guardado en la BD para mostrarlos en un datagridview
-                string traer_todo = "SELECT * FROM tblProveedor WHERE strNombtr = '" + Abuscar + "'";
-                dtgvProveedor.DataSource= cn.MostrarTabla(traer_todo);
+                string traer_todo = "SELECT * FROM tblProveedor WHERE strNombre = '" + Abuscar + "'";
+                dtgvProveedor.DataSource= cn.mostrarTabla(traer_todo);
+
+                //Metodos para tener los datos actualizados
+                refrescarcombobox();
+              
 
                 //Método para limpiar
                 limpiarCampos();
@@ -90,7 +56,6 @@ namespace ProjectFonal
         }
 
         //BLOQUE REGISTRAR PROVEEDOR
-
         private void txtNombreProveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Para evitar que se ingresen números
@@ -135,15 +100,15 @@ namespace ProjectFonal
 
                 try
                 {
-                    string guardarUsuario = "INSERT INTO tblProveedor([idNit],[strNombtr],[intC_Bancaria],[intTelefono])" + "values('" + txtNitProveedor.Text + "','" + txtNombreProveedor.Text + "','" + txtCtaBancariaProveedor.Text + "','" + txtTelefonoProveedor.Text + "')";
+                    string guardarUsuario = "INSERT INTO tblProveedor([idNit],[strNombre],[intBancaria],[intTelefono])" + "values('" + txtNitProveedor.Text + "','" + txtNombreProveedor.Text + "','" + txtCtaBancariaProveedor.Text + "','" + txtTelefonoProveedor.Text + "')";
                     cn.conectarComando(guardarUsuario);
 
                     MessageBox.Show("Se guardo la informacion");
 
-                    //Mantenemos la tabla refrescada               
-                    string mostrarTabla = "SELECT * from tblProveedor";
-                    //Llenamos el datagrid con la información
-                    dtgvProveedor.DataSource = (cn.MostrarTabla(mostrarTabla));
+                    //Metodos para tener los datos actualizados
+                    refrescarcombobox();
+                    //Metodo para tener los datos actualizados
+                    refrescardatagrid();
 
                     //Método para limpiar
                     limpiarCampos();
@@ -161,7 +126,6 @@ namespace ProjectFonal
         }
 
         //BLOQUE MODIFICAR
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             //Mostramos y ocultar panel necesarios          
@@ -215,11 +179,33 @@ namespace ProjectFonal
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
-            //BD
+            try
+            {
+                //Para mosdificar el proveedor
+                string modificar = cboModificarProveedor.Text;
+                string modificarproveedor= "UPDATE tblProveedor set idNit ='"+txtModificarNitProveedor.Text+"' ,strNombre = '" + txtModificarNombreProveedor.Text+"',intTelefono = '"+txtModificarTelefonoProveedor.Text+"',intBancaria = '"+txtModificarCtaBancariaProveedor.Text+"' where strNombre = '"+modificar+"'";
+                cn.conectarComando(modificarproveedor);
+
+                //Metodos para tener los datos actualizados
+                refrescarcombobox();
+                //Metodo para tener los datos actualizados
+                refrescardatagrid();
+                //Limpiamos los textbox
+
+                //Cerramos el panel
+                pnlModificarProveedor.Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se pudo modificar los datos"+ ex.Message);
+            }
+
         }
 
         private void btnCancelarModificarProveedor_Click(object sender, EventArgs e)
         {
+            //Cerramos el panel
             pnlModificarProveedor.Visible = false;
         }
 
@@ -240,15 +226,37 @@ namespace ProjectFonal
 
         private void btnEliminarProveedor_Click_1(object sender, EventArgs e)
         {
-            //string borar_usu = "DELETE FROM Libro Where Codigo='" + pedir + "'";
+            try
+            {
+                //Para borrar el proveedor
+                string Abuscar = cboEliminarProveedor.Text;
+                string borrarproveedor = "DELETE FROM tblProveedor Where strNombre='" + Abuscar + "'";
+                cn.conectarComando(borrarproveedor);
+
+                //Metodos para tener los datos actualizados
+                refrescarcombobox();
+                //Metodos para tener los datos actualizados
+                refrescardatagrid();
+
+                //Cerramos el panel
+                pnlEliminarProveedor.Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se pudo eliminar el proveedor"+ex.Message);
+                
+            }
+           
         }
 
         private void btnCancelarEliminarProveedor_Click(object sender, EventArgs e)
         {
+            //Cerramos el panel
             pnlEliminarProveedor.Visible = false;
         }
 
-       
         //Para limpiar los campos
         public void limpiarCampos()
         {
@@ -259,7 +267,10 @@ namespace ProjectFonal
             txtTelefonoProveedor.Clear();
             txtCtaBancariaProveedor.Clear();
             //Modificar
-           
+            txtModificarNombreProveedor.Clear();
+            txtModificarNitProveedor.Clear();
+            txtModificarTelefonoProveedor.Clear();
+            txtModificarCtaBancariaProveedor.Clear();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -273,6 +284,60 @@ namespace ProjectFonal
             {
                 btnBuscarProveedor.Enabled = false;
             }
+
+        }
+
+        private void refrescarcombobox() 
+        {
+            //Llenamos los comboboxes
+            try
+            {
+                string BuscarProveedor = "SELECT idNit,strNombre FROM tblProveedor ";
+                cboBuscarProveedor.DataSource = cn.mostrarTabla(BuscarProveedor);
+                //Para mostrar en el Combo los nombres
+                cboBuscarProveedor.DisplayMember = "strNombre";
+                //Para utilizar el nit al momento de hacer la consulta
+                cboBuscarProveedor.ValueMember = "idNit";
+
+                string EliminarProveedor = "SELECT idNit,strNombre FROM tblProveedor ";
+                cboEliminarProveedor.DataSource = cn.mostrarTabla(EliminarProveedor);
+                //Para mostrar en el Combo los nombres
+                cboEliminarProveedor.DisplayMember = "strNombre";
+                //Para utilizar el nit al momento de hacer la consulta
+                cboEliminarProveedor.ValueMember = "idNit";
+
+                string ModificarProveedor = "SELECT idNit,strNombre FROM tblProveedor ";
+                cboModificarProveedor.DataSource = cn.mostrarTabla(ModificarProveedor);
+                //Para mostrar en el Combo los nombres
+                cboModificarProveedor.DisplayMember = "strNombre";
+                //Para utilizar el nit al momento de hacer la consulta
+                cboModificarProveedor.ValueMember = "idNit";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo elimar al proveedor" + ex.Message);
+
+            }
+
+        }
+
+        private void refrescardatagrid() {
+
+            //Mantenemos el datagrid refrescado
+            try
+            {
+                //Mantenemos la tabla refrescada               
+                string mostrarTabla = "SELECT * from tblProveedor";
+                //Llenamos el datagrid con la información
+                dtgvProveedor.DataSource = cn.mostrarTabla(mostrarTabla);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se pudo mostrar la información en el " + dtgvProveedor + "" + ex.Message);
+            }
+
 
         }
     }

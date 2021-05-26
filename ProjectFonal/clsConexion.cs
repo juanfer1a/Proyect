@@ -7,18 +7,45 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Configuration; 
 
 namespace ProjectFonal
 {
     class clsConexion
     {
-        string conecxionSting;
+        //Conectamos con el servidos
+        string conecxionSting = ConfigurationManager.ConnectionStrings["ProjectFonal.Properties.Settings.db_a74d2a_projectfinalConnectionString"].ToString();
+        //SqlConnection conexion; 
+        //SqlCommand comand;
+        //string mensaje = "";
+        //SqlDataReader leer;
+
+        //private void conectar()
+        //{
+        //    try
+        //    {
+        //        conexion = new SqlConnection(conecxionSting);
+        //        conexion.Open();
+        //        MessageBox.Show("Falla al conectar con el servidor");
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        mensaje="Falla al conectar con el servidor :"+ ex.Message;
+        //    }
+        //}
+
+        public clsConexion() 
+        { 
+        
+        }
 
         //Metodo para ejecutar las consultas en la DB
         public void conectarComando(string comando)
         {
             //Conectamos con el servidos
-            conecxionSting = "Data Source=sql5097.site4now.net;Initial Catalog=db_a74d2a_projectfinal;Persist Security Info=True;User ID=db_a74d2a_projectfinal_admin;Password=parcero89";
+            
             SqlConnection conexion = new SqlConnection(conecxionSting);
             try
             {
@@ -41,12 +68,10 @@ namespace ProjectFonal
         }
 
         //Metodo para mostrar los datos en algún componente necesario
-        public DataTable MostrarTabla(string comando)
+        public DataTable mostrarTabla(string comando)
         {
-            //Conectamos con el servidos
-            conecxionSting = "Data Source=sql5097.site4now.net;Initial Catalog=db_a74d2a_projectfinal;Persist Security Info=True;User ID=db_a74d2a_projectfinal_admin;Password=parcero89";
+         
             SqlConnection conexion = new SqlConnection(conecxionSting);
-
             SqlCommand cmd = new SqlCommand(comando, conexion);
             //Estamos tomando la conexión y la consultada de la variable "traer todo"
             SqlDataAdapter data = new SqlDataAdapter(cmd);
@@ -58,7 +83,5 @@ namespace ProjectFonal
             return tabla;
         }
 
-
-        
     }
 }

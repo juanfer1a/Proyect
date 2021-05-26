@@ -42,16 +42,19 @@ namespace ProjectFonal
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.cboBuscarProveedor = new System.Windows.Forms.ComboBox();
             this.pnlEliminarProveedor = new System.Windows.Forms.Panel();
+            this.btnCancelarEliminarProveedor = new System.Windows.Forms.Button();
             this.cboEliminarProveedor = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnEliminarProveedor = new System.Windows.Forms.Button();
             this.pnlModificarProveedor = new System.Windows.Forms.Panel();
+            this.btnModificarProveedor = new System.Windows.Forms.Button();
             this.cboModificarProveedor = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnCancelarModificarProveedor = new System.Windows.Forms.Button();
             this.txtModificarNitProveedor = new System.Windows.Forms.TextBox();
+            this.btnCancelarModificarProveedor = new System.Windows.Forms.Button();
             this.txtModificarNombreProveedor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,9 +62,6 @@ namespace ProjectFonal
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtModificarCtaBancariaProveedor = new System.Windows.Forms.TextBox();
-            this.btnBuscarProveedor = new System.Windows.Forms.Button();
-            this.btnCancelarEliminarProveedor = new System.Windows.Forms.Button();
-            this.btnModificarProveedor = new System.Windows.Forms.Button();
             this.btnGuardarProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProveedor)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -185,6 +185,16 @@ namespace ProjectFonal
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BuscarProveedor";
             // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(32, 71);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(135, 23);
+            this.btnBuscarProveedor.TabIndex = 18;
+            this.btnBuscarProveedor.Text = "Buscar Proveedor";
+            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
+            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
+            // 
             // cboBuscarProveedor
             // 
             this.cboBuscarProveedor.FormattingEnabled = true;
@@ -207,6 +217,16 @@ namespace ProjectFonal
             this.pnlEliminarProveedor.Size = new System.Drawing.Size(352, 109);
             this.pnlEliminarProveedor.TabIndex = 14;
             this.pnlEliminarProveedor.Visible = false;
+            // 
+            // btnCancelarEliminarProveedor
+            // 
+            this.btnCancelarEliminarProveedor.Location = new System.Drawing.Point(245, 70);
+            this.btnCancelarEliminarProveedor.Name = "btnCancelarEliminarProveedor";
+            this.btnCancelarEliminarProveedor.Size = new System.Drawing.Size(93, 23);
+            this.btnCancelarEliminarProveedor.TabIndex = 18;
+            this.btnCancelarEliminarProveedor.Text = "Cancelar";
+            this.btnCancelarEliminarProveedor.UseVisualStyleBackColor = true;
+            this.btnCancelarEliminarProveedor.Click += new System.EventHandler(this.btnCancelarEliminarProveedor_Click);
             // 
             // cboEliminarProveedor
             // 
@@ -240,8 +260,8 @@ namespace ProjectFonal
             this.pnlModificarProveedor.Controls.Add(this.btnModificarProveedor);
             this.pnlModificarProveedor.Controls.Add(this.cboModificarProveedor);
             this.pnlModificarProveedor.Controls.Add(this.label10);
-            this.pnlModificarProveedor.Controls.Add(this.btnCancelarModificarProveedor);
             this.pnlModificarProveedor.Controls.Add(this.txtModificarNitProveedor);
+            this.pnlModificarProveedor.Controls.Add(this.btnCancelarModificarProveedor);
             this.pnlModificarProveedor.Controls.Add(this.txtModificarNombreProveedor);
             this.pnlModificarProveedor.Controls.Add(this.label6);
             this.pnlModificarProveedor.Controls.Add(this.label7);
@@ -249,18 +269,28 @@ namespace ProjectFonal
             this.pnlModificarProveedor.Controls.Add(this.label9);
             this.pnlModificarProveedor.Controls.Add(this.label8);
             this.pnlModificarProveedor.Controls.Add(this.txtModificarCtaBancariaProveedor);
-            this.pnlModificarProveedor.Location = new System.Drawing.Point(274, 214);
+            this.pnlModificarProveedor.Location = new System.Drawing.Point(260, 214);
             this.pnlModificarProveedor.Name = "pnlModificarProveedor";
-            this.pnlModificarProveedor.Size = new System.Drawing.Size(352, 173);
+            this.pnlModificarProveedor.Size = new System.Drawing.Size(377, 173);
             this.pnlModificarProveedor.TabIndex = 15;
             this.pnlModificarProveedor.Visible = false;
+            // 
+            // btnModificarProveedor
+            // 
+            this.btnModificarProveedor.Location = new System.Drawing.Point(35, 84);
+            this.btnModificarProveedor.Name = "btnModificarProveedor";
+            this.btnModificarProveedor.Size = new System.Drawing.Size(93, 23);
+            this.btnModificarProveedor.TabIndex = 18;
+            this.btnModificarProveedor.Text = "Modificar";
+            this.btnModificarProveedor.UseVisualStyleBackColor = true;
+            this.btnModificarProveedor.Click += new System.EventHandler(this.btnModificarProveedor_Click);
             // 
             // cboModificarProveedor
             // 
             this.cboModificarProveedor.FormattingEnabled = true;
-            this.cboModificarProveedor.Location = new System.Drawing.Point(32, 38);
+            this.cboModificarProveedor.Location = new System.Drawing.Point(9, 50);
             this.cboModificarProveedor.Name = "cboModificarProveedor";
-            this.cboModificarProveedor.Size = new System.Drawing.Size(195, 21);
+            this.cboModificarProveedor.Size = new System.Drawing.Size(141, 21);
             this.cboModificarProveedor.TabIndex = 17;
             // 
             // label10
@@ -272,9 +302,17 @@ namespace ProjectFonal
             this.label10.TabIndex = 16;
             this.label10.Text = "MODIFICAR PROVEEDOR";
             // 
+            // txtModificarNitProveedor
+            // 
+            this.txtModificarNitProveedor.Location = new System.Drawing.Point(227, 81);
+            this.txtModificarNitProveedor.Name = "txtModificarNitProveedor";
+            this.txtModificarNitProveedor.Size = new System.Drawing.Size(139, 20);
+            this.txtModificarNitProveedor.TabIndex = 3;
+            this.txtModificarNitProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModificarNitProveedor_KeyPress);
+            // 
             // btnCancelarModificarProveedor
             // 
-            this.btnCancelarModificarProveedor.Location = new System.Drawing.Point(245, 117);
+            this.btnCancelarModificarProveedor.Location = new System.Drawing.Point(35, 117);
             this.btnCancelarModificarProveedor.Name = "btnCancelarModificarProveedor";
             this.btnCancelarModificarProveedor.Size = new System.Drawing.Size(93, 26);
             this.btnCancelarModificarProveedor.TabIndex = 11;
@@ -282,17 +320,9 @@ namespace ProjectFonal
             this.btnCancelarModificarProveedor.UseVisualStyleBackColor = true;
             this.btnCancelarModificarProveedor.Click += new System.EventHandler(this.btnCancelarModificarProveedor_Click);
             // 
-            // txtModificarNitProveedor
-            // 
-            this.txtModificarNitProveedor.Location = new System.Drawing.Point(88, 91);
-            this.txtModificarNitProveedor.Name = "txtModificarNitProveedor";
-            this.txtModificarNitProveedor.Size = new System.Drawing.Size(139, 20);
-            this.txtModificarNitProveedor.TabIndex = 3;
-            this.txtModificarNitProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModificarNitProveedor_KeyPress);
-            // 
             // txtModificarNombreProveedor
             // 
-            this.txtModificarNombreProveedor.Location = new System.Drawing.Point(88, 65);
+            this.txtModificarNombreProveedor.Location = new System.Drawing.Point(227, 55);
             this.txtModificarNombreProveedor.Name = "txtModificarNombreProveedor";
             this.txtModificarNombreProveedor.Size = new System.Drawing.Size(139, 20);
             this.txtModificarNombreProveedor.TabIndex = 0;
@@ -301,7 +331,7 @@ namespace ProjectFonal
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 68);
+            this.label6.Location = new System.Drawing.Point(156, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 2;
@@ -310,7 +340,7 @@ namespace ProjectFonal
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 94);
+            this.label7.Location = new System.Drawing.Point(156, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 4;
@@ -318,7 +348,7 @@ namespace ProjectFonal
             // 
             // txtModificarTelefonoProveedor
             // 
-            this.txtModificarTelefonoProveedor.Location = new System.Drawing.Point(88, 117);
+            this.txtModificarTelefonoProveedor.Location = new System.Drawing.Point(227, 107);
             this.txtModificarTelefonoProveedor.Name = "txtModificarTelefonoProveedor";
             this.txtModificarTelefonoProveedor.Size = new System.Drawing.Size(139, 20);
             this.txtModificarTelefonoProveedor.TabIndex = 5;
@@ -327,7 +357,7 @@ namespace ProjectFonal
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 146);
+            this.label9.Location = new System.Drawing.Point(156, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 8;
@@ -336,7 +366,7 @@ namespace ProjectFonal
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 120);
+            this.label8.Location = new System.Drawing.Point(156, 110);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 6;
@@ -344,41 +374,11 @@ namespace ProjectFonal
             // 
             // txtModificarCtaBancariaProveedor
             // 
-            this.txtModificarCtaBancariaProveedor.Location = new System.Drawing.Point(88, 143);
+            this.txtModificarCtaBancariaProveedor.Location = new System.Drawing.Point(227, 133);
             this.txtModificarCtaBancariaProveedor.Name = "txtModificarCtaBancariaProveedor";
             this.txtModificarCtaBancariaProveedor.Size = new System.Drawing.Size(139, 20);
             this.txtModificarCtaBancariaProveedor.TabIndex = 7;
             this.txtModificarCtaBancariaProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModificarCtaBancariaProveedor_KeyPress);
-            // 
-            // btnBuscarProveedor
-            // 
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(32, 71);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(135, 23);
-            this.btnBuscarProveedor.TabIndex = 18;
-            this.btnBuscarProveedor.Text = "BuscarProveedor";
-            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
-            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
-            // 
-            // btnCancelarEliminarProveedor
-            // 
-            this.btnCancelarEliminarProveedor.Location = new System.Drawing.Point(245, 70);
-            this.btnCancelarEliminarProveedor.Name = "btnCancelarEliminarProveedor";
-            this.btnCancelarEliminarProveedor.Size = new System.Drawing.Size(93, 23);
-            this.btnCancelarEliminarProveedor.TabIndex = 18;
-            this.btnCancelarEliminarProveedor.Text = "Cancelar";
-            this.btnCancelarEliminarProveedor.UseVisualStyleBackColor = true;
-            this.btnCancelarEliminarProveedor.Click += new System.EventHandler(this.btnCancelarEliminarProveedor_Click);
-            // 
-            // btnModificarProveedor
-            // 
-            this.btnModificarProveedor.Location = new System.Drawing.Point(245, 84);
-            this.btnModificarProveedor.Name = "btnModificarProveedor";
-            this.btnModificarProveedor.Size = new System.Drawing.Size(93, 23);
-            this.btnModificarProveedor.TabIndex = 18;
-            this.btnModificarProveedor.Text = "Modificar";
-            this.btnModificarProveedor.UseVisualStyleBackColor = true;
-            this.btnModificarProveedor.Click += new System.EventHandler(this.btnModificarProveedor_Click);
             // 
             // btnGuardarProveedor
             // 
