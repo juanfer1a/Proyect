@@ -48,7 +48,7 @@ namespace ProjectFonal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se encontro tal empleado " + ex.Message);
+                MessageBox.Show("No se encontro tal empleado " + ex);
             }
         }
 
