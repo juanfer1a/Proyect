@@ -282,7 +282,7 @@ namespace ProjectFonal
             }
             else
             {
-                btnBuscarProveedor.Enabled = false;
+                //btnBuscarProveedor.Enabled = false;
             }
 
         }
